@@ -17,10 +17,10 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name) {
-  if (grade > max_grade_) {
+  if (grade > max_possible_grade_value_) {
     throw GradeTooLowException();
   }
-  if (grade < min_grade_) {
+  if (grade < min_possible_grade_value_) {
     throw GradeTooHighException();
   }
   grade_ = grade;
@@ -31,7 +31,7 @@ const std::string &Bureaucrat::getName() const { return name_; }
 int Bureaucrat::getGrade() const { return grade_; }
 
 void Bureaucrat::promote() {
-  if (grade_ <= min_grade_) {
+  if (grade_ <= min_possible_grade_value_) {
     throw GradeTooHighException();
   }
 
@@ -39,7 +39,7 @@ void Bureaucrat::promote() {
 }
 
 void Bureaucrat::demote() {
-  if (grade_ >= max_grade_) {
+  if (grade_ >= max_possible_grade_value_) {
     throw GradeTooLowException();
   }
   ++grade_;
