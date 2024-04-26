@@ -3,7 +3,78 @@
 #include <iostream>
 #include <string>
 
+void ex00_test();
+void ex01_test();
+
 int main() {
+  ex00_test();
+  ex01_test();
+
+
+
+}
+
+void ex01_test() {
+  std::cout << "Trying Form Good" << std::endl;
+  try {
+  Form new_form("Formular", 121, 89);
+  std::cout << new_form << std::endl;
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  std::cout << "------------------------------" << std::endl << std::endl;
+
+  std::cout << "Trying Form too HIGH" << std::endl;
+  try {
+  Form new_form1("Formular", 0, 89);
+  std::cout << new_form1 << std::endl;
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  std::cout << "------------------------------" << std::endl << std::endl;
+
+  std::cout << "Trying too LOW" << std::endl;
+  try {
+  Form new_form2("Formular", 228, 89);
+  std::cout << new_form2 << std::endl;
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  std::cout << "------------------------------" << std::endl << std::endl;
+
+  Form my_form("Antrag", 100, 100);
+  Bureaucrat chief("Chief", 1);
+
+  std::cout << "Trying to sign GOOD" << std::endl;
+  try {
+    chief.signForm(my_form);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  std::cout << "------------------------------" << std::endl << std::endl;
+
+  std::cout << "Trying to sign AGAIN" << std::endl;
+  try {
+    chief.signForm(my_form);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  std::cout << "------------------------------" << std::endl << std::endl;
+
+  Form my_form2("Antrag2", 100, 100);
+  Bureaucrat clerk("Chief", 150);
+
+  std::cout << "Trying to sign TOO LOW" << std::endl;
+  try {
+    clerk.signForm(my_form2);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  std::cout << "------------------------------" << std::endl << std::endl;
+
+}
+
+void ex00_test() {
   std::cout << "Trying grade 1110 (too low)" << std::endl;
   try {
     Bureaucrat a("Jack", 1110);
@@ -42,7 +113,5 @@ int main() {
   } catch (std::exception &e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
-
-  Form new_form("Formular", 121, 89);
-  std::cout << new_form;
+  std::cout << "------------------------------" << std::endl << std::endl;
 }

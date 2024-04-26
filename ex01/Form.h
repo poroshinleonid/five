@@ -33,8 +33,8 @@ public:
   };
 
 private:
-  static const int max_possible_grade_value_ = 1;
-  static const int min_possible_grade_value_ = 150;
+  static const int min_possible_grade_value_ = 1;
+  static const int max_possible_grade_value_ = 150;
   const std::string name_;
   bool is_signed_;
   const int grade_to_sign_;
