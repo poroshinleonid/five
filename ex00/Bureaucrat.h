@@ -1,9 +1,11 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <iostream>
+#include <stdexcept>
 #include <string>
 
-class	Bureaucrat {
+class Bureaucrat {
 public:
   Bureaucrat();
   Bureaucrat(Bureaucrat const &other);
@@ -19,17 +21,13 @@ public:
   void demote();
 
   class GradeTooHighException : public std::exception {
-    public:
-      virtual const char* what() const throw() {
-        return "Grade too high";
-      }
+  public:
+    virtual const char *what() const throw() { return "Grade too high"; }
   };
 
   class GradeTooLowException : public std::exception {
-    public:
-      virtual const char* what() const throw() {
-        return "Grade too low";
-      }
+  public:
+    virtual const char *what() const throw() { return "Grade too low"; }
   };
 
 private:
@@ -39,4 +37,7 @@ private:
   int grade_;
 };
 
-#endif //BUREAUCRAT_HPP
+std::ostream &operator<<(std::ostream &out_stream,
+                         const Bureaucrat &bureaucrat);
+
+#endif // BUREAUCRAT_HPP

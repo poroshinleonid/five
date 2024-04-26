@@ -4,11 +4,12 @@
 
 Bureaucrat::Bureaucrat() : name_("John Smith"), grade_(150) {}
 
-Bureaucrat::Bureaucrat(Bureaucrat const &other) : name_(other.name_), grade_(other.grade_) {};
+Bureaucrat::Bureaucrat(Bureaucrat const &other)
+    : name_(other.name_), grade_(other.grade_){};
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other) {
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
   if (this != &other) {
     grade_ = other.grade_;
   }
@@ -25,13 +26,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name) {
   grade_ = grade;
 }
 
-const std::string &Bureaucrat::getName() const {
-  return name_;
-}
+const std::string &Bureaucrat::getName() const { return name_; }
 
-int Bureaucrat::getGrade() const{
-  return grade_;
-}
+int Bureaucrat::getGrade() const { return grade_; }
 
 void Bureaucrat::promote() {
   if (grade_ <= min_grade_) {
@@ -39,7 +36,7 @@ void Bureaucrat::promote() {
   }
 
   --grade_;
-} 
+}
 
 void Bureaucrat::demote() {
   if (grade_ >= max_grade_) {
@@ -48,3 +45,10 @@ void Bureaucrat::demote() {
   ++grade_;
 }
 
+std::ostream &operator<<(std::ostream &out_stream,
+                         const Bureaucrat &bureaucrat) {
+  out_stream << bureaucrat.getName();
+  out_stream << ", bureaucrat grade ";
+  out_stream << bureaucrat.getGrade();
+  return out_stream;
+}
