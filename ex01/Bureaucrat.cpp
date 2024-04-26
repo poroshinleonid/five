@@ -1,4 +1,5 @@
 #include "Bureaucrat.h"
+#include "Form.h"
 
 #include <string>
 
@@ -54,6 +55,17 @@ std::ostream &operator<<(std::ostream &out_stream,
 }
 
 void Bureaucrat::signForm(Form &form) const {
-  (void)form;
-  //Implement logic
+  if (form.isSigned()) {
+    std::cout << *this << " couldn't sign " << form.getName()
+              << " because it is already signed" << std::endl;
+    return;
+  }
+  if (grade_ > form.getGradeToSign()) {
+    std::cout << *this << " couldn't sign " << form.getName()
+              << " because his Grade is too low" << std::endl;
+    form.beSigned(*this);
+    return;
+  }
+  form.beSigned(*this);
+  std::cout << name_ << " signed " << form;
 }

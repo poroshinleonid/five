@@ -1,4 +1,5 @@
 #include "Bureaucrat.h"
+#include "Form.h"
 #include <iostream>
 #include <string>
 
@@ -42,7 +43,6 @@ int main() {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
 
-
-
-  
+  Form new_form("Formular", 121, 89);
+  std::cout << new_form;
 }
