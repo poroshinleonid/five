@@ -2,6 +2,7 @@ CPP = "c++"
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = ex01_exec
 SRCS = Bureaucrat.cpp\
+		Form.cpp \
 		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

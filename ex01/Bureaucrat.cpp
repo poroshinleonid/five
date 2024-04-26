@@ -52,3 +52,8 @@ std::ostream &operator<<(std::ostream &out_stream,
   out_stream << bureaucrat.getGrade();
   return out_stream;
 }
+
+void Bureaucrat::signForm(Form &form) const {
+  (void)form;
+  //Implement logic
+}

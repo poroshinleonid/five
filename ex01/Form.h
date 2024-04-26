@@ -1,6 +1,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include "Bureaucrat.h"
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -11,6 +12,15 @@ public:
   Form(Form const &other);
   ~Form();
   Form &operator=(const Form &obj);
+
+  Form(const std::string &name, int grade_to_sign, int grade_to_execute);
+
+  const std::string &getName() const;
+  const bool &isSigned() const;
+  const int &getGradeToSign() const;
+  const int &getGradeToExecute() const;
+
+  void beSigned(Bureaucrat &signer);
 
   class GradeTooHighException : public std::exception {
   public:
@@ -31,4 +41,6 @@ private:
   const int grade_to_execute_;
 };
 
-#endif / / FORM_HPP
+std::ostream &operator<<(std::ostream &out_stream, const Form &form);
+
+#endif // FORM_HPP

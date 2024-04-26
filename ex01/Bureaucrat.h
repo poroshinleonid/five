@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <string>
 
+class Form;
+
 class Bureaucrat {
 public:
   Bureaucrat();
@@ -19,6 +21,8 @@ public:
 
   void promote();
   void demote();
+
+  void signForm(Form &form) const;
 
   class GradeTooHighException : public std::exception {
   public:
