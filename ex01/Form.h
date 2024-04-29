@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef FORM_H
+#define FORM_H
 
 #include "Bureaucrat.h"
 #include <iostream>
@@ -43,4 +43,4 @@ private:
 
 std::ostream &operator<<(std::ostream &out_stream, const Form &form);
 
-#endif // FORM_HPP
+#endif // FORM_H

@@ -1,5 +1,5 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_H
+#define BUREAUCRAT_H
 
 #include <iostream>
 #include <stdexcept>
@@ -40,4 +40,4 @@ private:
 std::ostream &operator<<(std::ostream &out_stream,
                          const Bureaucrat &bureaucrat);
 
-#endif // BUREAUCRAT_HPP
+#endif // BUREAUCRAT_H
