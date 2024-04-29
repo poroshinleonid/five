@@ -1,7 +1,7 @@
 #ifndef PresidentialPardonForm_HPP
 #define PresidentialPardonForm_HPP
 
-class	PresidentialPardonForm {
+class PresidentialPardonForm {
 public:
   PresidentialPardonForm();
   PresidentialPardonForm(PresidentialPardonForm const &other);

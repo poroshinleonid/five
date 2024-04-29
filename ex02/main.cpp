@@ -6,17 +6,13 @@
 void ex02_test();
 
 int main() {
-  ex00_test();
-  ex01_test();
-
-
-
+  // ex00_test();
+  // ex01_test();
 }
 
 void ex02_test() {
-  //make sure AForm is abstract
+  // make sure AForm is abstract
 }
-
 
 // void ex01_test() {
 //   std::cout << "Trying Form Good" << std::endl;

@@ -1,7 +1,7 @@
 #ifndef RobotomyRequestForm_HPP
 #define RobotomyRequestForm_HPP
 
-class	RobotomyRequestForm {
+class RobotomyRequestForm {
 public:
   RobotomyRequestForm();
   RobotomyRequestForm(RobotomyRequestForm const &other);

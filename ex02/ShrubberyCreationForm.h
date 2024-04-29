@@ -1,7 +1,8 @@
 #ifndef ShrubberyCreationForm_HPP
 #define ShrubberyCreationForm_HPP
 
-#define SHRUBBERY_TREE "                                                 \
+#define SHRUBBERY_TREE                                                         \
+  "                                                 \
                        O                         \
                       ***                        \
                      **O**                       \
@@ -47,16 +48,14 @@
                   ###########                    \
                   ###########                    "
 
-class	ShrubberyCreationForm {
+#include "AForm.h"
+
+class ShrubberyCreationForm : public AForm {
 public:
   ShrubberyCreationForm();
   ShrubberyCreationForm(ShrubberyCreationForm const &other);
   ~ShrubberyCreationForm();
   ShrubberyCreationForm &operator=(const ShrubberyCreationForm &obj);
-
-private:
-  static const int grade_to_sign_ = 145;
-  static const int grade_to_execute = 137;
 };
 
 #endif

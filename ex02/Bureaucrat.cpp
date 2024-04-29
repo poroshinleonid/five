@@ -1,5 +1,5 @@
 #include "Bureaucrat.h"
-#include "Form.h"
+#include "AForm.h"
 
 #include <string>
 
@@ -60,12 +60,14 @@ void Bureaucrat::signForm(AForm &form) const {
               << " because it is already signed" << std::endl;
     return;
   }
-  if (grade_ > form.getGradeToSign()) {
+  if (!form.canSign(*this)) {
     std::cout << *this << " couldn't sign " << form.getName()
               << " because his Grade is too low" << std::endl;
     form.beSigned(*this);
     return;
   }
   form.beSigned(*this);
-  std::cout << name_ << " signed " << form << std::endl;
+  std::cout << name_ << " signed " << form.getName() << std::endl;
 }
+
+void Bureaucrat::executeForm(const AForm &form) const { (void)form; }
