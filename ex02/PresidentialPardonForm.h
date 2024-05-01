@@ -1,5 +1,5 @@
-#ifndef PresidentialPardonForm_HPP
-#define PresidentialPardonForm_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 class PresidentialPardonForm {
 public:
@@ -13,4 +13,4 @@ private:
   static const int grade_to_execute;
 };
 
-#endif
+#endif // PRESIDENTIALPARDONFORM_HPP

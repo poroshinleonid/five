@@ -1,18 +1,19 @@
 #include "RobotomyRequestForm.h"
+#include "Bureaucrat.h"
 
 RobotomyRequestForm::RobotomyRequestForm() {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other)
-    : grade_to_sign_(other.grade_to_sign_),
-      grade_to_execute(other.grade_to_execute){};
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other){};
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
 RobotomyRequestForm &
 RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
-  if (this != &other) {
-    this->grade_to_sign_ = other.grade_to_sign_;
-    this->grade_to_execute = other.grade_to_execute;
-  }
+  (void)other;
+  if (this != &other) {}
   return (*this);
+}
+
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
+  
 }

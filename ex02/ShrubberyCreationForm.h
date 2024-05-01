@@ -1,5 +1,5 @@
-#ifndef ShrubberyCreationForm_HPP
-#define ShrubberyCreationForm_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
 #define SHRUBBERY_TREE                                                         \
   "                                                 \
@@ -58,4 +58,4 @@ public:
   ShrubberyCreationForm &operator=(const ShrubberyCreationForm &obj);
 };
 
-#endif
+#endif // SHRUBBERYCREATIONFORM_HPP
