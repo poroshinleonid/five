@@ -1,117 +1,174 @@
+#include "AForm.h"
 #include "Bureaucrat.h"
-#include "Form.h"
-#include <iostream>
-#include <string>
+#include "PresidentialPardonForm.h"
+#include "RobotomyRequestForm.h"
+#include "ShrubberyCreationForm.h"
 
-void ex02_test();
+void robo_check() {
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  RobotomyRequestForm r1("John Smith");
+  RobotomyRequestForm r2("John Smith");
+  RobotomyRequestForm r3("John Smith");
+  RobotomyRequestForm r4("John Smith");
+  RobotomyRequestForm r5("John Smith");
+  Bureaucrat president("A. Lincoln", 1);
+  president.signForm(r1);
+  president.signForm(r2);
+  president.signForm(r3);
+  president.signForm(r4);
+  president.signForm(r5);
+  for (int i = 0; i < 1000; i++) {
+      president.executeForm(r1);
+      president.executeForm(r2);
+      president.executeForm(r3);
+      president.executeForm(r4);
+      president.executeForm(r5);
+  }
+}
 
 int main() {
-  // ex00_test();
-  // ex01_test();
+  /*
+1.
+2. C
+3. Try signing each form unsuccessfully (low grade)
+4. Try executing each form unsuccessfully (not signed)
+5. Sign each form successfully
+6. Try executing then again unsuccessfully (low grade)
+7. Execute each form successfully
+8. Execute Robotomy several times
+*/
+
+ // Create AForm(fail)
+ // AForm wrong_form;
+  Bureaucrat low_ranker("Low Ranker", 150);
+  Bureaucrat president("A. Lincoln", 1);
+
+ // Create 3 forms
+  ShrubberyCreationForm shrub_example("forest");
+  RobotomyRequestForm robo_example("John Smith");
+  PresidentialPardonForm pardon_example("O. J. Simpson");
+  // 3. Try signing each form unsuccessfully (low grade)
+  try {
+    low_ranker.signForm(shrub_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  try {
+    low_ranker.signForm(robo_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  } 
+  try {
+    low_ranker.signForm(pardon_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+
+  // 4. Try executing each form unsuccessfully (not signed)
+  try {
+    president.executeForm(shrub_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  try {
+    president.executeForm(robo_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  } 
+  try {
+    president.executeForm(pardon_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+
+  // 5. Sign each form successfully
+  try {
+    president.signForm(shrub_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  try {
+    president.signForm(robo_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  } 
+  try {
+    president.signForm(pardon_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+
+  // 6. Try executing then again unsuccessfully (low grade)
+  try {
+    low_ranker.executeForm(shrub_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  try {
+    low_ranker.executeForm(robo_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  } 
+  try {
+    low_ranker.executeForm(pardon_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  // 7. Execute each form successfully
+  try {
+    president.executeForm(shrub_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  try {
+    president.executeForm(robo_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  } 
+  try {
+    president.executeForm(pardon_example);
+  } catch (std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
+  }
+  // 8. Execute Robotomy several times
+  president.executeForm(robo_example);
+  president.executeForm(robo_example);
+  president.executeForm(robo_example);
+  president.executeForm(robo_example);
+  president.executeForm(robo_example);
+  president.executeForm(robo_example);
+  president.executeForm(robo_example);
+
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+  
+  RobotomyRequestForm r1("John Smith");
+  RobotomyRequestForm r2("John Smith");
+  RobotomyRequestForm r3("John Smith");
+  RobotomyRequestForm r4("John Smith");
+  RobotomyRequestForm r5("John Smith");
+  president.signForm(r1);
+  president.signForm(r2);
+  president.signForm(r3);
+  president.signForm(r4);
+  president.signForm(r5);
+  president.executeForm(r1);
+  president.executeForm(r2);
+  president.executeForm(r3);
+  president.executeForm(r4);
+  president.executeForm(r5);
+  robo_check();
 }
-
-void ex02_test() {
-  // make sure AForm is abstract
-}
-
-// void ex01_test() {
-//   std::cout << "Trying Form Good" << std::endl;
-//   try {
-//   Form new_form("Formular", 121, 89);
-//   std::cout << new_form << std::endl;
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   std::cout << "Trying Form too HIGH" << std::endl;
-//   try {
-//   Form new_form1("Formular", 0, 89);
-//   std::cout << new_form1 << std::endl;
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   std::cout << "Trying too LOW" << std::endl;
-//   try {
-//   Form new_form2("Formular", 228, 89);
-//   std::cout << new_form2 << std::endl;
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   Form my_form("Antrag", 100, 100);
-//   Bureaucrat chief("Chief", 1);
-
-//   std::cout << "Trying to sign GOOD" << std::endl;
-//   try {
-//     chief.signForm(my_form);
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   std::cout << "Trying to sign AGAIN" << std::endl;
-//   try {
-//     chief.signForm(my_form);
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   Form my_form2("Antrag2", 100, 100);
-//   Bureaucrat clerk("Chief", 150);
-
-//   std::cout << "Trying to sign TOO LOW" << std::endl;
-//   try {
-//     clerk.signForm(my_form2);
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-// }
-
-// void ex00_test() {
-//   std::cout << "Trying grade 1110 (too low)" << std::endl;
-//   try {
-//     Bureaucrat a("Jack", 1110);
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   std::cout << "Trying grade 0 (too high)" << std::endl;
-//   try {
-//     Bureaucrat b("Jim", 0);
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   std::cout << "Create bureaucrat and increment until error" << std::endl;
-//   Bureaucrat c("Jeb", 3);
-//   try {
-//     while (1) {
-//       std::cout << c << std::endl;
-//       c.promote();
-//     }
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-
-//   std::cout << "Create bureaucrat and decrement until error" << std::endl;
-//   Bureaucrat d("Jeb", 148);
-//   try {
-//     while (1) {
-//       std::cout << d << std::endl;
-//       d.demote();
-//     }
-//   } catch (std::exception &e) {
-//     std::cerr << "Exception: " << e.what() << std::endl;
-//   }
-//   std::cout << "------------------------------" << std::endl << std::endl;
-// }
