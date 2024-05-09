@@ -1,19 +1,39 @@
 #include "ShrubberyCreationForm.h"
+#include <string>
+#include <iostream>
+#include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-    : AForm("", grade_to_sign_(), grade_to_execute_()) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
-    : grade_to_sign_(other.grade_to_sign_),
-      grade_to_execute(other.grade_to_execute){};
+ShrubberyCreationForm::ShrubberyCreationForm() {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) {(void)other;}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm &
 ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
-  if (this != &other) {
-    this->grade_to_sign_ = other.grade_to_sign_;
-    this->grade_to_execute = other.grade_to_execute;
-  }
+  (void)other;
   return (*this);
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), target_(target){}
+
+
+void ShrubberyCreationForm::execution_implementation(const Bureaucrat &executor) const{
+  (void)executor;
+  std::ofstream target_file;
+  target_file.open(target_ + "_shrubbery");
+  
+  target_file << "       _-_\n\
+    /~~   ~~\\ \n\
+ /~~         ~~\\ \n\
+{               } \n\
+ \\  _-     -_  / \n\
+   ~  \\\\ //  ~ \n\
+_- -   | | _- _ \n\
+  _ -  | |   -_ \n\
+      // \\\\ \n\
+";
+target_file.close();
+return;
 }
