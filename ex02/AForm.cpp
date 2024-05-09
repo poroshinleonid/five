@@ -62,7 +62,7 @@ std::ostream &operator<<(std::ostream &out_stream, const AForm &form) {
   return out_stream;
 }
 
-bool AForm::canSign(Bureaucrat signer) const {
+bool AForm::canSign(const Bureaucrat &signer) const {
   if (isSigned()) {
     return false;
   }
@@ -72,12 +72,14 @@ bool AForm::canSign(Bureaucrat signer) const {
   return true;
 }
 
-bool AForm::canExecute(Bureaucrat signer) const {
-  if (!isSigned()) {
-    return false;
+void AForm::execute(const Bureaucrat &executor) const {
+  if (executor.getGrade() > getGradeToExecute()) {
+    throw AForm::GradeTooLowException();
+    return;
   }
-  if (signer.getGrade() > getGradeToExecute()) {
-    return false;
+  if (isSigned() == false) {
+    std::cerr << executor.getName() << " couldn't execute the form " << getName() << ". Reason: The form is not signed." << std::endl;
+    return;
   }
-  return true;
+  execution_implementation(executor);
 }
