@@ -72,4 +72,5 @@ void Bureaucrat::signForm(AForm &form) const {
 
 void Bureaucrat::executeForm(const AForm &form) const {
   form.execute(*this);
+  std::cout << name_ << " executed " << form.getName() << std::endl;
 }
