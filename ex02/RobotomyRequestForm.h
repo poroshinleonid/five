@@ -1,19 +1,24 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
-class RobotomyRequestForm {
-public:
+#include "AForm.h"
+#include <string>
+
+class RobotomyRequestForm : virtual public AForm {
+private:
   RobotomyRequestForm();
   RobotomyRequestForm(RobotomyRequestForm const &other);
-  ~RobotomyRequestForm();
   RobotomyRequestForm &operator=(const RobotomyRequestForm &obj);
 
-  virtual void execute(const Bureaucrat &executor) const;
+public:
+  ~RobotomyRequestForm();
 
+  RobotomyRequestForm(std::string target);
+
+  void execution_implementation(const Bureaucrat &executor) const;
 
 private:
-  static const int grade_to_sign_;
-  static const int grade_to_execute;
+  const std::string target_;
 };
 
 #endif // ROBOTOMYREQUESTFORM_HPP
