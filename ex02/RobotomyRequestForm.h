@@ -18,6 +18,7 @@ public:
   void execution_implementation(const Bureaucrat &executor) const;
 
 private:
+  static bool is_rand_seeded_;
   const std::string target_;
 };
 
