@@ -9,6 +9,7 @@ private:
   ShrubberyCreationForm();
   ShrubberyCreationForm(ShrubberyCreationForm const &other);
   ShrubberyCreationForm &operator=(const ShrubberyCreationForm &obj);
+
 public:
   ~ShrubberyCreationForm();
 
