@@ -18,14 +18,17 @@ Form &Form::operator=(const Form &other) {
 }
 
 Form::Form(const std::string &name, int grade_to_sign, int grade_to_execute)
-    : name_(name), is_signed_(false), grade_to_sign_(grade_to_sign), grade_to_execute_(grade_to_execute) {
-      if (grade_to_sign_ < min_possible_grade_value_ || grade_to_execute_ < min_possible_grade_value_) {
-        throw GradeTooHighException();
-      }
-      if (grade_to_sign_ > max_possible_grade_value_ || grade_to_execute_ > max_possible_grade_value_) {
-        throw GradeTooLowException();
-      }
-    }
+    : name_(name), is_signed_(false), grade_to_sign_(grade_to_sign),
+      grade_to_execute_(grade_to_execute) {
+  if (grade_to_sign_ < min_possible_grade_value_ ||
+      grade_to_execute_ < min_possible_grade_value_) {
+    throw GradeTooHighException();
+  }
+  if (grade_to_sign_ > max_possible_grade_value_ ||
+      grade_to_execute_ > max_possible_grade_value_) {
+    throw GradeTooLowException();
+  }
+}
 
 const std::string &Form::getName() const { return name_; }
 

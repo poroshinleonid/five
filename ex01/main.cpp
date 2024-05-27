@@ -9,16 +9,13 @@ void ex01_test();
 int main() {
   ex00_test();
   ex01_test();
-
-
-
 }
 
 void ex01_test() {
   std::cout << "Trying Form creation: Good" << std::endl;
   try {
-  Form new_form("Formular", 121, 89);
-  std::cout << new_form << std::endl;
+    Form new_form("Formular", 121, 89);
+    std::cout << new_form << std::endl;
   } catch (std::exception &e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
@@ -26,8 +23,8 @@ void ex01_test() {
 
   std::cout << "Trying Form creation: too HIGH" << std::endl;
   try {
-  Form new_form1("Formular", 0, 89);
-  std::cout << new_form1 << std::endl;
+    Form new_form1("Formular", 0, 89);
+    std::cout << new_form1 << std::endl;
   } catch (std::exception &e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
@@ -35,8 +32,8 @@ void ex01_test() {
 
   std::cout << "Trying Form creation: too LOW" << std::endl;
   try {
-  Form new_form2("Formular", 228, 89);
-  std::cout << new_form2 << std::endl;
+    Form new_form2("Formular", 228, 89);
+    std::cout << new_form2 << std::endl;
   } catch (std::exception &e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
@@ -75,14 +72,14 @@ void ex01_test() {
   Form superform("Superform", 100, 100);
   Bureaucrat wagie("Wagie", 150);
 
-  std::cout << "Trying to beSigned() TOO LOW - expecting to catch an exception!" << std::endl;
+  std::cout << "Trying to beSigned() TOO LOW - expecting to catch an exception!"
+            << std::endl;
   try {
     superform.beSigned(wagie);
   } catch (std::exception &e) {
     std::cerr << "Exception: " << e.what() << std::endl;
   }
   std::cout << "------------------------------" << std::endl << std::endl;
-
 }
 
 void ex00_test() {
