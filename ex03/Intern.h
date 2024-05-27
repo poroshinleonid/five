@@ -5,11 +5,12 @@
 #include <string>
 
 class Intern {
+private:
+  Intern(Intern const &other);
+  Intern &operator=(const Intern &obj);
 public:
   Intern();
-  Intern(Intern const &other);
   ~Intern();
-  Intern &operator=(const Intern &obj);
 
   AForm *makeForm(const std::string &name, const std::string &target);
 
