@@ -8,6 +8,7 @@ class Intern {
 private:
   Intern(Intern const &other);
   Intern &operator=(const Intern &obj);
+
 public:
   Intern();
   ~Intern();
