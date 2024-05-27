@@ -78,7 +78,8 @@ void AForm::execute(const Bureaucrat &executor) const {
     return;
   }
   if (isSigned() == false) {
-    std::cerr << executor.getName() << " couldn't execute the form " << getName() << ". Reason: The form is not signed." << std::endl;
+    std::cerr << executor.getName() << " couldn't execute the form "
+              << getName() << ". Reason: The form is not signed." << std::endl;
     return;
   }
   execution_implementation(executor);
