@@ -9,6 +9,7 @@ private:
   PresidentialPardonForm();
   PresidentialPardonForm(PresidentialPardonForm const &other);
   PresidentialPardonForm &operator=(const PresidentialPardonForm &obj);
+
 public:
   ~PresidentialPardonForm();
 
@@ -18,7 +19,6 @@ public:
 
 private:
   std::string target_;
-
 };
 
 #endif // PRESIDENTIALPARDONFORM_HPP
