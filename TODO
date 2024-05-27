@@ -1,0 +1,20 @@
+ex02 tests:
+    /*
+    1. Create AForm(fail)
+    2. Create 3 forms
+    3. Try signing each form unsuccessfully (low grade)
+    4. Try executing each form unsuccessfully (not signed)
+    5. Sign each form successfully
+    6. Try executing then again unsuccessfully (low grade)
+    7. Execute each form successfully
+    8. Execute Robotomy several times
+    */
+ex03:
+  Remove/change/private constructors for the intern!11
+  tests: basic intern tests idk
+
+
+Overall:
+  1. Leaks
+  2. C++98 make sure
+  3. eval sheet
