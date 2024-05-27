@@ -1,11 +1,12 @@
 #include "RobotomyRequestForm.h"
 #include "Bureaucrat.h"
-#include <ctime>   
-
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm() {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other){(void)other;};
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) {
+  (void)other;
+};
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
@@ -15,7 +16,8 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
   return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target_(target){
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+    : AForm("RobotomyRequestForm", 72, 45), target_(target) {
   if (is_rand_seeded_ == false) {
     time_t cur_time = std::time(&cur_time);
     std::srand(static_cast<unsigned int>(cur_time));
@@ -23,7 +25,8 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRe
   }
 }
 
-void RobotomyRequestForm::execution_implementation(const Bureaucrat &executor) const {
+void RobotomyRequestForm::execution_implementation(
+    const Bureaucrat &executor) const {
   (void)executor;
 
   bool coin_flip = static_cast<unsigned int>(std::rand()) % 2;
@@ -31,7 +34,8 @@ void RobotomyRequestForm::execution_implementation(const Bureaucrat &executor) c
     std::cout << target_ << " has been robotomized" << std::endl;
     return;
   }
-  std::cout << "The robotomization of " << target_ << " has failed." << std::endl;
+  std::cout << "The robotomization of " << target_ << " has failed."
+            << std::endl;
   return;
 }
 bool RobotomyRequestForm::is_rand_seeded_ = false;
