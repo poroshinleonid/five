@@ -1,10 +1,10 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include <string>
 #include "AForm.h"
+#include <string>
 
-class	Intern {
+class Intern {
 public:
   Intern();
   Intern(Intern const &other);
