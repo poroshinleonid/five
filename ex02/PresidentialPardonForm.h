@@ -13,7 +13,7 @@ private:
 public:
   ~PresidentialPardonForm();
 
-  PresidentialPardonForm(std::string target);
+  PresidentialPardonForm(const std::string &target);
 
   void execution_implementation(const Bureaucrat &executor) const;
 

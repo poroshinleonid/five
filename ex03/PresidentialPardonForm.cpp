@@ -3,7 +3,7 @@
 PresidentialPardonForm::PresidentialPardonForm() {}
 
 PresidentialPardonForm::PresidentialPardonForm(
-    PresidentialPardonForm const &other) {
+    PresidentialPardonForm const &other) : AForm() {
   (void)other;
 };
 
@@ -15,7 +15,7 @@ PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
   return (*this);
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
     : AForm("PresidentialPardonForm", 25, 5), target_(target) {}
 
 void PresidentialPardonForm::execution_implementation(

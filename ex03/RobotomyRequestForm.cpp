@@ -1,10 +1,11 @@
 #include "RobotomyRequestForm.h"
 #include "Bureaucrat.h"
 #include <ctime>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) : AForm() {
   (void)other;
 };
 
@@ -16,7 +17,7 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
   return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
     : AForm("RobotomyRequestForm", 72, 45), target_(target) {
   if (is_rand_seeded_ == false) {
     time_t cur_time = std::time(&cur_time);

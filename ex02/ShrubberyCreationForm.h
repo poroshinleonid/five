@@ -13,7 +13,7 @@ private:
 public:
   ~ShrubberyCreationForm();
 
-  ShrubberyCreationForm(std::string target);
+  ShrubberyCreationForm(const std::string &target);
 
   void execution_implementation(const Bureaucrat &executor) const;
 

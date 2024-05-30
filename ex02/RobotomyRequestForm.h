@@ -13,7 +13,7 @@ private:
 public:
   ~RobotomyRequestForm();
 
-  RobotomyRequestForm(std::string target);
+  RobotomyRequestForm(const std::string &target);
 
   void execution_implementation(const Bureaucrat &executor) const;
 
