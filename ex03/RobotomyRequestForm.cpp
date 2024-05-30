@@ -1,11 +1,12 @@
 #include "RobotomyRequestForm.h"
 #include "Bureaucrat.h"
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm() {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other) : AForm() {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other)
+    : AForm() {
   (void)other;
 };
 

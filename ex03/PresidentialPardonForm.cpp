@@ -3,7 +3,8 @@
 PresidentialPardonForm::PresidentialPardonForm() {}
 
 PresidentialPardonForm::PresidentialPardonForm(
-    PresidentialPardonForm const &other) : AForm() {
+    PresidentialPardonForm const &other)
+    : AForm() {
   (void)other;
 };
 

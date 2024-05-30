@@ -5,8 +5,8 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(
-    ShrubberyCreationForm const &other)  : AForm()  {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
+    : AForm() {
   (void)other;
 }
 
