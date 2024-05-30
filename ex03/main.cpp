@@ -10,6 +10,7 @@ int main() {
   Intern someRandomIntern;
   AForm *rrf;
   rrf = someRandomIntern.makeForm("robotomy requesst", "Bender");
+  delete rrf;
   rrf = someRandomIntern.makeForm("robotomy request", "Bender");
   std::cout << rrf->getName() << std::endl;
   std::cout << rrf->getGradeToExecute() << std::endl;
@@ -23,4 +24,5 @@ int main() {
   rrf->execute(president);
   rrf->execute(president);
   rrf->execute(president);
+  delete rrf;
 }
