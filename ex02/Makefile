@@ -1,6 +1,6 @@
 CPP = "c++"
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ex01_exec
+NAME = ex02_exec
 SRCS = Bureaucrat.cpp\
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
