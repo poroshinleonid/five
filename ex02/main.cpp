@@ -28,13 +28,13 @@ void robo_check() {
   president.signForm(r3);
   president.signForm(r4);
   president.signForm(r5);
-  for (int i = 0; i < 1000; i++) {
-    president.executeForm(r1);
-    president.executeForm(r2);
-    president.executeForm(r3);
-    president.executeForm(r4);
-    president.executeForm(r5);
-  }
+  // for (int i = 0; i < 2; i++) {
+  //   president.executeForm(r1);
+  //   president.executeForm(r2);
+  //   president.executeForm(r3);
+  //   president.executeForm(r4);
+  //   president.executeForm(r5);
+  // }
 }
 
 int main() {

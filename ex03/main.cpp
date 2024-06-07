@@ -15,7 +15,6 @@ int main() {
   std::cout << rrf->getName() << std::endl;
   std::cout << rrf->getGradeToExecute() << std::endl;
   std::cout << rrf->getGradeToSign() << std::endl;
-
   Bureaucrat president("Obama", 1);
   rrf->beSigned(president);
   rrf->execute(president);
@@ -25,4 +24,24 @@ int main() {
   rrf->execute(president);
   rrf->execute(president);
   delete rrf;
+
+  std::cout << std::endl << std::endl;
+  rrf = someRandomIntern.makeForm("presidential pardon", "(not) a criminal");
+  std::cout << rrf->getName() << std::endl;
+  std::cout << rrf->getGradeToExecute() << std::endl;
+  std::cout << rrf->getGradeToSign() << std::endl;
+  rrf->beSigned(president);
+  rrf->execute(president);
+  delete rrf;
+
+
+  std::cout << std::endl << std::endl;
+  rrf = someRandomIntern.makeForm("shrubbery creation", "SAMPLE_SHRUB");
+  std::cout << rrf->getName() << std::endl;
+  std::cout << rrf->getGradeToExecute() << std::endl;
+  std::cout << rrf->getGradeToSign() << std::endl;
+  rrf->beSigned(president);
+  rrf->execute(president);
+  delete rrf;
+
 }
