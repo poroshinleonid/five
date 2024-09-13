@@ -84,3 +84,11 @@ void AForm::execute(const Bureaucrat &executor) const {
   }
   execution_implementation(executor);
 }
+
+const char *AForm::GradeTooHighException::what() const throw() {
+  return "Grade too high";
+}
+
+const char *AForm::GradeTooLowException::what() const throw() {
+  return "Grade too low";
+}

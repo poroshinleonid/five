@@ -34,7 +34,6 @@ int main() {
   rrf->execute(president);
   delete rrf;
 
-
   std::cout << std::endl << std::endl;
   rrf = someRandomIntern.makeForm("shrubbery creation", "SAMPLE_SHRUB");
   std::cout << rrf->getName() << std::endl;
@@ -43,5 +42,4 @@ int main() {
   rrf->beSigned(president);
   rrf->execute(president);
   delete rrf;
-
 }

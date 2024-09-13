@@ -41,7 +41,6 @@ private:
   int grade_;
 };
 
-
 std::ostream &operator<<(std::ostream &out_stream,
                          const Bureaucrat &bureaucrat);
 
