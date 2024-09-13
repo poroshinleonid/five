@@ -50,6 +50,15 @@ void Form::beSigned(const Bureaucrat &signer) {
   is_signed_ = true;
 }
 
+const char *Form::GradeTooHighException::what() const throw() {
+  return "Grade too high";
+}
+
+const char *Form::GradeTooLowException::what() const throw() {
+  return "Grade too low";
+}
+
+
 std::ostream &operator<<(std::ostream &out_stream, const Form &form) {
   out_stream << "Form '" << form.getName() << "', ";
   if (form.isSigned()) {

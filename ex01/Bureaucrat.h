@@ -26,12 +26,12 @@ public:
 
   class GradeTooHighException : public std::exception {
   public:
-    virtual const char *what() const throw() { return "Grade too high"; }
+    virtual const char *what() const throw();
   };
 
   class GradeTooLowException : public std::exception {
   public:
-    virtual const char *what() const throw() { return "Grade too low"; }
+    virtual const char *what() const throw();
   };
 
 private:
@@ -40,6 +40,7 @@ private:
   const std::string name_;
   int grade_;
 };
+
 
 std::ostream &operator<<(std::ostream &out_stream,
                          const Bureaucrat &bureaucrat);
